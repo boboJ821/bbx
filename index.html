@@ -9,7 +9,7 @@
 		<title>黄曦的个人简历 | 产品运营 · 数据分析</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/main.css" />
 		<style>
 			.skill-bar {
 				width: 100%;
@@ -228,10 +228,10 @@
 		<!-- Header -->
 			<div class="avatar-overlay"></div>
 			<div class="avatar-lightbox"></div>
-			<header id="header">
+			<header id="header" style="background-image: url('./images/overlay.png'), url('./images/bg.jpg');">
 				<div class="inner">
 					<div class="avatar-container">
-						<img src="images/avatar-small.jpg" alt="" class="avatar-small" />
+						<img src="./images/avatar-small.jpg" alt="" class="avatar-small" />
 					</div>
 					<h1><!-- ... --></h1>
 				</div>
@@ -468,12 +468,12 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="./assets/js/jquery.min.js"></script>
+			<script src="./assets/js/jquery.poptrox.min.js"></script>
+			<script src="./assets/js/browser.min.js"></script>
+			<script src="./assets/js/breakpoints.min.js"></script>
+			<script src="./assets/js/util.js"></script>
+			<script src="./assets/js/main.js"></script>
 
 		<script>
 			window.addEventListener('load', function() {
@@ -484,7 +484,7 @@
 				
 				// 创建大图
 				const largeImage = new Image();
-				largeImage.src = 'images/avatar.jpg';
+				largeImage.src = './images/avatar.jpg';
 				lightbox.appendChild(largeImage);
 
 				// 点击小图显示大图
