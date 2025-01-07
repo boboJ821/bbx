@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
+		<meta name="description" content="黄曦的个人简历 - 产品运营与数据分析专家，3年运营经验，擅长数据驱动决策" />
 		<style>
 			.skill-bar {
 				width: 100%;
@@ -221,6 +222,134 @@
 					font-size: 0.85em;
 				}
 			}
+
+			.skill-wrapper {
+				display: flex;
+				align-items: center;
+				gap: 15px;
+				margin: 20px 0;
+				background: rgba(73, 191, 157, 0.05);
+				border: 1px solid rgba(73, 191, 157, 0.1);
+				padding: 15px;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.skill-icon {
+				width: 40px;
+				height: 40px;
+				min-width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 12px;
+				padding: 8px;
+			}
+
+			.skill-icon img {
+				width: 250%;
+				height: 250%;
+				object-fit: contain;
+			}
+
+			.skill-content {
+				flex-grow: 1;
+			}
+
+			.skill-name {
+				font-size: 1.1em;
+				margin-bottom: 8px;
+				color: #333;
+				font-weight: 500;
+				letter-spacing: 0.5px;
+			}
+
+			.skill-bar {
+				height: 8px;
+				background: #e0e0e0;
+				border-radius: 4px;
+				position: relative;
+				overflow: visible;
+			}
+
+			.skill-level {
+				height: 100%;
+				border-radius: 4px;
+				background: #49bf9d;
+				position: relative;
+				transition: all 0.3s ease;
+				box-shadow: 0 0 15px rgba(73, 191, 157, 0.5);
+			}
+
+			.skill-level::after {
+				content: '';
+				position: absolute;
+				right: -4px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 12px;
+				height: 12px;
+				background: #49bf9d;
+				border-radius: 50%;
+				box-shadow: 0 0 10px rgba(73, 191, 157, 0.8);
+			}
+
+			.skill-percentage {
+				position: absolute;
+				right: -30px;
+				top: 50%;
+				transform: translateY(-50%);
+				background: none;
+				color: #49bf9d;
+				font-weight: bold;
+				font-size: 0.9em;
+			}
+
+			/* 悬停效果 */
+			.skill-wrapper:hover {
+				transform: translateY(-3px);
+				box-shadow: 0 4px 15px rgba(73, 191, 157, 0.15);
+			}
+
+			.skill-wrapper:hover .skill-level::after {
+				animation: pulse 1.5s infinite;
+			}
+
+			@keyframes pulse {
+				0% {
+					box-shadow: 0 0 0 0 rgba(73, 191, 157, 0.4);
+				}
+				70% {
+					box-shadow: 0 0 0 10px rgba(73, 191, 157, 0);
+				}
+				100% {
+					box-shadow: 0 0 0 0 rgba(73, 191, 157, 0);
+				}
+			}
+
+			/* 移动端适配 */
+			@media screen and (max-width: 736px) {
+				.skill-wrapper {
+					padding: 10px;
+					gap: 10px;
+				}
+
+				.skill-icon {
+					width: 30px;
+					height: 30px;
+					min-width: 30px;
+				}
+
+				.skill-name {
+					font-size: 0.9em;
+				}
+
+				.skill-percentage {
+					font-size: 0.8em;
+					right: -20px;
+					top: -16px;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -231,12 +360,12 @@
 			<header id="header" style="background-image: url('./images/overlay.png'), url('./images/bg.jpg');">
 				<div class="inner">
 					<div class="avatar-container">
-						<img src="./images/avatar-small.jpg" alt="" class="avatar-small" />
+						<img src="./images/avatar-small.jpg" alt="个人头像" class="avatar-small" />
 					</div>
-					<h1><!-- ... --></h1>
-				</div>
-					<span style="color: #49bf9d">产品运营 | 数据分析</span><br />
-					<small>3年运营经验 · 擅长数据驱动决策</small></h1>
+					<h1>
+						<span style="color: #49bf9d">产品运营 | 数据分析</span><br />
+						<small>3年运营经验 · 擅长数据驱动决策</small>
+					</h1>
 				</div>
 			</header>
 
@@ -374,27 +503,87 @@
 						<h2>专业技能</h2>
 						<div class="row">
 							<div class="col-6 col-12-small">
-								<h3>设计工具</h3>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 90%">Photoshop 85%</div>
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/ps.png" alt="Photoshop" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">Photoshop</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 85%">
+												<span class="skill-percentage">85%</span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 85%">Illustrator 95%</div>
+								
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/ai.png" alt="Illustrator" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">Illustrator</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 95%">
+												<span class="skill-percentage">95%</span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 95%">Procreate 80%</div>
+								
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/cursor.png" alt="Cursor" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">cursor</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 80%">
+												<span class="skill-percentage">80%</span>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="col-6 col-12-small">
-								<h3>AI工具</h3>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 95%">Chatgpt 90%</div>
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/chatgpt.png" alt="ChatGPT" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">ChatGPT</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 90%">
+												<span class="skill-percentage">90%</span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 80%">Python 80%</div>
+								
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/python.png" alt="Python" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">Python</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 80%">
+												<span class="skill-percentage">80%</span>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="skill-bar">
-									<div class="skill-level" style="width: 85%">Comfyui 80%</div>
+								
+								<div class="skill-wrapper">
+									<div class="skill-icon">
+										<img src="./images/comfyui.png" alt="Comfyui" />
+									</div>
+									<div class="skill-content">
+										<div class="skill-name">Comfyui</div>
+										<div class="skill-bar">
+											<div class="skill-level" style="width: 80%">
+												<span class="skill-percentage">80%</span>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
