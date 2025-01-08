@@ -145,4 +145,22 @@
         });
     });
 
+    // 微信二维码弹窗功能
+    $(document).ready(function() {
+        $('.icon.brands.fa-weixin').on('click', function(e) {
+            e.preventDefault();
+            $('#wechatQR').css('display', 'flex');
+        });
+
+        $('.close-qr').on('click', function() {
+            $('#wechatQR').css('display', 'none');
+        });
+
+        $('#wechatQR').on('click', function(e) {
+            if (e.target === this) {
+                $(this).css('display', 'none');
+            }
+        });
+    });
+
 })(jQuery);

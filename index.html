@@ -651,7 +651,7 @@
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						<li><a href="#" class="icon brands fa-weixin" title="微信号"><span class="label">WeChat</span></a></li>
+						<li><a href="javascript:void(0);" class="icon brands fa-weixin" title="微信号"><span class="label">WeChat</span></a></li>
 						<li><a href="#" class="icon solid fa-envelope" title="发送邮件"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
@@ -659,6 +659,16 @@
 					</ul>
 				</div>
 			</footer>
+
+		<!-- 在 footer 之前添加 -->
+		<div class="wechat-qr-modal" id="wechatQR">
+			<div class="wechat-qr-container">
+				<span class="close-qr">&times;</span>
+				<img src="./images/wechat-qr.jpg" alt="微信二维码" />
+				<p>扫描二维码添加微信</p>
+				<p style="font-size: 0.9em; color: #666;">微信号：Felix_x131</p>
+			</div>
+		</div>
 
 		<!-- Scripts -->
 			<script src="./assets/js/jquery.min.js"></script>
