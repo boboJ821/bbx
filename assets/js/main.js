@@ -163,4 +163,53 @@
         });
     });
 
+    // 平滑滚动功能
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 获取目标元素
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                // 获取header高度（如果header是固定定位的话）
+                const headerOffset = document.querySelector('#header').offsetHeight;
+                
+                // 计算目标位置
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                // 平滑滚动
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // 添加活动状态
+                document.querySelectorAll('.smooth-scroll').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+
+    // 滚动时更新活动状态
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const id = section.getAttribute('id');
+            const navLink = document.querySelector(`.smooth-scroll[href="#${id}"]`);
+
+            if (scrollY > sectionTop && scrollY <= sectionBottom) {
+                navLink?.classList.add('active');
+            } else {
+                navLink?.classList.remove('active');
+            }
+        });
+    });
+
 })(jQuery);
