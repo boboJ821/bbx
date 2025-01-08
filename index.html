@@ -634,7 +634,7 @@
 									</li>
 									<li>
 										<h3 class="icon brands fa-weixin"><span class="label">WeChat</span></h3>
-										Felix_x131
+										<a href="#" onclick="copyWechat('Felix_x131'); return false;">Felix_x131</a>
 									</li>
 									<li>
 										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
@@ -694,6 +694,16 @@
 					lightbox.classList.remove('active');
 				}
 			});
+
+			function copyWechat(text) {
+				navigator.clipboard.writeText(text)
+					.then(() => {
+						alert('微信号已复制到剪贴板');
+					})
+					.catch(err => {
+						console.error('复制失败:', err);
+					});
+			}
 		</script>
 
 	</body>
