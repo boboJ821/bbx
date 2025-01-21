@@ -352,6 +352,45 @@
 					top: -16px;
 				}
 			}
+
+			/* 添加微信二维码模态框样式 */
+			.wechat-qr-modal {
+				display: none;
+				position: fixed;
+				z-index: 10000;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.8);
+				justify-content: center;
+				align-items: center;
+			}
+
+			.wechat-qr-container {
+				background: white;
+				padding: 20px;
+				border-radius: 8px;
+				text-align: center;
+				position: relative;
+				max-width: 300px;
+				width: 90%;
+			}
+
+			.wechat-qr-container img {
+				width: 200px;
+				height: 200px;
+				margin: 10px auto;
+			}
+
+			.close-qr {
+				position: absolute;
+				right: 10px;
+				top: 5px;
+				font-size: 24px;
+				cursor: pointer;
+				color: #666;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -728,6 +767,28 @@
 						console.error('复制失败:', err);
 					});
 			}
+
+			// 添加微信图标点击事件处理
+			document.addEventListener('DOMContentLoaded', function() {
+				const weixinIcon = document.querySelector('.icon.brands.fa-weixin');
+				const wechatQR = document.getElementById('wechatQR');
+				const closeQR = document.querySelector('.close-qr');
+
+				weixinIcon.addEventListener('click', function(e) {
+					e.preventDefault();
+					wechatQR.style.display = 'flex';
+				});
+
+				closeQR.addEventListener('click', function() {
+					wechatQR.style.display = 'none';
+				});
+
+				wechatQR.addEventListener('click', function(e) {
+					if (e.target === wechatQR) {
+						wechatQR.style.display = 'none';
+					}
+				});
+			});
 		</script>
 
 	</body>
