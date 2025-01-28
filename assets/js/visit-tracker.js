@@ -1,9 +1,9 @@
 // 初始化 LeanCloud
 const { Query, User } = AV;
 AV.init({
-  appId: "你的AppID",
-  appKey: "你的AppKey",
-  serverURL: "你的服务器URL"
+  appId: "MtJITlnYUT0UQCFMafGOhEQq-gzGzoHsz",
+  appKey: "kwIo9qXgTCFxGNFDKSdbsJc5",
+  serverURL: "https://mtjitlny.lc-cn-n1-shared.com"
 });
 
 class VisitTracker {

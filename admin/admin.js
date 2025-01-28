@@ -1,13 +1,13 @@
 // 初始化 LeanCloud
 const { Query, User } = AV;
 AV.init({
-    appId: "你的AppID",
-    appKey: "你的AppKey",
-    serverURL: "你的服务器URL"
+    appId: "MtJITlnYUT0UQCFMafGOhEQq-gzGzoHsz",
+    appKey: "kwIo9qXgTCFxGNFDKSdbsJc5",
+    serverURL: "https://mtjitlny.lc-cn-n1-shared.com"
 });
 
 // 设置访问密码（建议使用更复杂的密码并定期更改）
-const ACCESS_PASSWORD = "你的访问密码";
+const ACCESS_PASSWORD = "bbx821722";
 
 let visitsChart = null;
 
