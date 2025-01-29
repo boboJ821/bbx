@@ -1,0 +1,51 @@
+/* 头像相关样式 */
+.avatar-container {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    width: 123px;
+    margin: 0 auto;
+}
+
+.avatar-container .avatar-small {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease;
+}
+
+.avatar-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+}
+
+.avatar-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.avatar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 10000;
+}
+
+.avatar-lightbox.active,
+.avatar-overlay.active {
+    display: flex;
+} 

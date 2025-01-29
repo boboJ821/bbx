@@ -1,0 +1,9 @@
+/* 导航相关样式 */
+.header-nav {
+    margin-top: 2.5em;
+    padding: 0.8em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    /* ... 其他导航样式 ... */
+} 

@@ -3455,3 +3455,26 @@ input, select, textarea {
         background: rgba(73, 191, 157, 0.4);
     }
 }
+
+/* 导入所有组件样式 */
+@import 'components/avatar.css';
+@import 'components/skills.css';
+@import 'components/nav.css';
+/* ... 其他组件样式 ... */
+
+/* 全局样式 */
+:root {
+    --primary-color: #49bf9d;
+    --text-color: #787878;
+    --background-color: #fff;
+    /* ... 其他全局变量 ... */
+}
+
+/* 基础样式 */
+body {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    line-height: 1.75em;
+    color: var(--text-color);
+}
+
+/* ... 其他全局样式 ... */

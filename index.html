@@ -10,6 +10,9 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/components/avatar.css" />
+		<link rel="stylesheet" href="./assets/css/components/skills.css" />
+		<link rel="stylesheet" href="./assets/css/components/nav.css" />
 		<meta name="description" content="黄曦的个人简历 - 产品运营与数据分析专家，3年运营经验，擅长数据驱动决策" />
 		<style>
 			.skill-bar {
@@ -391,6 +394,94 @@
 				cursor: pointer;
 				color: #666;
 			}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 1.5rem;
+				margin-top: 2rem;
+			}
+
+			.skill-card {
+				background: white;
+				padding: 1.5rem;
+				border-radius: 0.75rem;
+				box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+				transition: all 0.3s ease;
+			}
+
+			.skill-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+			}
+
+			.skill-header {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			.skill-header h3 {
+				margin: 0;
+				font-size: 1.25rem;
+				font-weight: 600;
+				color: #4a5568;
+			}
+
+			.relative {
+				position: relative;
+			}
+
+			.w-12 {
+				width: 3rem;
+			}
+
+			.h-12 {
+				height: 3rem;
+			}
+
+			.skill-icon {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+			}
+
+			.skill-bar-container {
+				position: relative;
+				padding-top: 0.5rem;
+			}
+
+			.skill-bar {
+				background: #e2e8f0;
+				height: 0.5rem;
+				border-radius: 9999px;
+				overflow: hidden;
+			}
+
+			.skill-bar-fill {
+				height: 100%;
+				background: #10B981;
+				width: 0;
+				transition: width 1s ease-out;
+				box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+			}
+
+			.skill-percentage {
+				position: absolute;
+				right: 0;
+				top: -1.5rem;
+				font-size: 0.875rem;
+				font-weight: 500;
+				color: #4a5568;
+			}
+
+			@media screen and (max-width: 736px) {
+				.skills-grid {
+					grid-template-columns: 1fr;
+					gap: 1rem;
+				}
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -551,94 +642,101 @@
 				<!-- Three -->
 					<section id="three">
 						<h2>专业技能</h2>
-						<div class="row">
-							<!-- 第一列 -->
-							<div class="col-6 col-12-small">
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/ps.webp" alt="Photoshop" />
+						<div class="skills-grid">
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/ps.webp" 
+											 alt="Photoshop" 
+											 class="skill-icon" />
 									</div>
-									<div class="skill-content">
-										<div class="skill-name">Photoshop</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 85%">
-												<span class="skill-percentage">85%</span>
-											</div>
-										</div>
-									</div>
+									<h3>Photoshop</h3>
 								</div>
-								
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/ai.webp" alt="Illustrator" />
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="85"></div>
 									</div>
-									<div class="skill-content">
-										<div class="skill-name">Illustrator</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 95%">
-												<span class="skill-percentage">95%</span>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/cursor.webp" alt="Cursor" />
-									</div>
-									<div class="skill-content">
-										<div class="skill-name">cursor</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 80%">
-												<span class="skill-percentage">80%</span>
-											</div>
-										</div>
-									</div>
+									<span class="skill-percentage">85%</span>
 								</div>
 							</div>
-
-							<!-- 第二列 -->
-							<div class="col-6 col-12-small">
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/chatgpt.webp" alt="ChatGPT" />
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/chatgpt.webp" 
+											 alt="ChatGPT" 
+											 class="skill-icon" />
 									</div>
-									<div class="skill-content">
-										<div class="skill-name">ChatGPT</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 90%">
-												<span class="skill-percentage">90%</span>
-											</div>
-										</div>
-									</div>
+									<h3>ChatGPT</h3>
 								</div>
-								
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/python.webp" alt="Python" />
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="90"></div>
 									</div>
-									<div class="skill-content">
-										<div class="skill-name">Python</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 80%">
-												<span class="skill-percentage">80%</span>
-											</div>
-										</div>
-									</div>
+									<span class="skill-percentage">90%</span>
 								</div>
-								
-								<div class="skill-wrapper">
-									<div class="skill-icon">
-										<img src="./images/comfyui.webp" alt="Comfyui" />
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/ai.webp" 
+											 alt="Illustrator" 
+											 class="skill-icon" />
 									</div>
-									<div class="skill-content">
-										<div class="skill-name">Comfyui</div>
-										<div class="skill-bar">
-											<div class="skill-level" style="width: 80%">
-												<span class="skill-percentage">80%</span>
-											</div>
-										</div>
+									<h3>Illustrator</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="95"></div>
 									</div>
+									<span class="skill-percentage">95%</span>
+								</div>
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/python.webp" 
+											 alt="Python" 
+											 class="skill-icon" />
+									</div>
+									<h3>Python</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="80"></div>
+									</div>
+									<span class="skill-percentage">80%</span>
+								</div>
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/cursor.webp" 
+											 alt="cursor" 
+											 class="skill-icon" />
+									</div>
+									<h3>cursor</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="80"></div>
+									</div>
+									<span class="skill-percentage">80%</span>
+								</div>
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/comfyui.webp" 
+											 alt="Comfyui" 
+											 class="skill-icon" />
+									</div>
+									<h3>Comfyui</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="80"></div>
+									</div>
+									<span class="skill-percentage">80%</span>
 								</div>
 							</div>
 						</div>
@@ -731,33 +829,14 @@
 			<script src="./assets/js/main.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
 			<script src="./assets/js/visit-tracker.js"></script>
+			<script src="./assets/js/components/avatar.js"></script>
+			<script src="./assets/js/components/skills.js"></script>
 
 		<script>
-			window.addEventListener('load', function() {
-				const avatarContainer = document.querySelector('.avatar-container');
-				const avatarSmall = avatarContainer.querySelector('.avatar-small');
-				const overlay = document.querySelector('.avatar-overlay');
-				const lightbox = document.querySelector('.avatar-lightbox');
-				
-				// 创建大图
-				const largeImage = new Image();
-				largeImage.src = './images/avatar.webp';
-				lightbox.appendChild(largeImage);
-
-				// 点击小图显示大图
-				avatarContainer.addEventListener('click', function() {
-					overlay.classList.add('active');
-					lightbox.classList.add('active');
-				});
-
-				// 点击大图或遮罩层关闭
-				overlay.addEventListener('click', closeLightbox);
-				lightbox.addEventListener('click', closeLightbox);
-
-				function closeLightbox() {
-					overlay.classList.remove('active');
-					lightbox.classList.remove('active');
-				}
+			// 初始化组件
+			document.addEventListener('DOMContentLoaded', () => {
+				new AvatarHandler();
+				new SkillsAnimation();
 			});
 
 			function copyWechat(text) {
