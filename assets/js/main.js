@@ -115,3 +115,10 @@
 			});
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... 其他初始化代码 ...
+    
+    // 初始化3D背景
+    new ThreeBackground();
+});

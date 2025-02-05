@@ -1,0 +1,206 @@
+/* 整合所有组件样式 */
+
+/* Avatar 组件样式 */
+.avatar-container {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    width: 123px;
+    margin: 0 auto;
+}
+
+.avatar-container .avatar-small {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    transition: all 0.3s ease;
+}
+
+.avatar-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+}
+
+.avatar-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+}
+
+.avatar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 10000;
+}
+
+.avatar-lightbox.active,
+.avatar-overlay.active {
+    display: flex;
+}
+
+/* Skills 组件样式 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.skill-level {
+    background-color: #49bf9d;
+    height: 20px;
+    border-radius: 3px;
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+}
+
+/* Navigation 组件样式 */
+.header-nav {
+    margin-top: 2.5em;
+    padding: 0.8em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2em;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.header-nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7em 1.4em;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 响应式样式 */
+@media screen and (max-width: 736px) {
+    .avatar-container {
+        width: 100px;
+    }
+    
+    .header-nav {
+        margin: 2em 1em 0;
+        padding: 0.6em;
+    }
+    
+    .header-nav ul {
+        gap: 0.8em;
+    }
+    
+    .header-nav a {
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+}
+
+/* ... 其他 avatar 相关样式 ... */
+
+/* ... 其他 skills 相关样式 ... */
+
+/* ... 其他 navigation 相关样式 ... */
+
+/* 微信图标组件样式 */
+.wechat-container {
+    position: relative;
+    display: inline-block;
+}
+
+#wechatQR {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+#wechatQR img {
+    max-width: 300px;
+    border-radius: 8px;
+}
+
+.close-qr {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+/* 图标悬停效果 */
+.icon.brands {
+    transition: color 0.2s ease-in-out;
+}
+
+.icon.brands:hover {
+    color: var(--primary-color);
+} 

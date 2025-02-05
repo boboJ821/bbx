@@ -3478,3 +3478,596 @@ body {
 }
 
 /* ... 其他全局样式 ... */
+
+/* 添加到文件末尾 */
+body {
+    perspective: 1000px;
+}
+
+#main, #header, #footer {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.section {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.section:hover {
+    transform: translateZ(20px);
+}
+
+/* 为内容添加玻璃态效果 */
+#header, #main > section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+/* 更新3D相关样式 */
+body {
+    perspective: 2000px;
+    background: #000;
+}
+
+#main, #header, #footer {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+section {
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateZ(-10px);
+    filter: blur(10px);
+    border-radius: 20px;
+}
+
+/* 增强玻璃态效果 */
+#header, #main > section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 0 80px rgba(73, 191, 157, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 30px;
+    padding: 30px;
+    transform: translateZ(20px);
+}
+
+/* 悬停效果 */
+#main > section:hover {
+    transform: translateZ(40px);
+    box-shadow: 
+        0 15px 45px 0 rgba(31, 38, 135, 0.45),
+        inset 0 0 100px rgba(73, 191, 157, 0.2);
+}
+
+/* 添加深度标记 */
+section:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(-20px);
+    width: 80%;
+    height: 10px;
+    background: linear-gradient(
+        to bottom,
+        rgba(73, 191, 157, 0.2),
+        transparent
+    );
+    filter: blur(5px);
+}
+
+/* 优化滚动行为 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 添加滚动指示器 */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.scroll-indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(73, 191, 157, 0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+    background: #49bf9d;
+    transform: scale(1.5);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 736px) {
+    #header, #main > section {
+        transform: translateZ(10px);
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    #main > section:hover {
+        transform: translateZ(20px);
+    }
+}
+
+/* 更新布局相关样式 */
+body {
+    perspective: 2000px;
+    background: #000;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    padding: 3em 2em;
+    text-align: center;
+    margin-bottom: 0;
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+    transform-style: preserve-3d;
+    z-index: 2;
+}
+
+/* 调整section间距 */
+#main > section {
+    margin: 2em 0;
+    padding: 2em;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 优化玻璃态效果 */
+#header, #main > section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 0 80px rgba(73, 191, 157, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 调整header内部布局 */
+#header .inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 优化导航栏位置 */
+.header-nav {
+    margin-top: 2em;
+    padding: 1em;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 736px) {
+    #header {
+        padding: 2em 1em;
+    }
+
+    #main {
+        padding: 1em;
+    }
+
+    #main > section {
+        margin: 1em 0;
+        padding: 1.5em;
+    }
+}
+
+/* 优化滚动行为 */
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* 调整内容容器 */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+/* 添加页面过渡效果 */
+.page-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 优化section hover效果 */
+#main > section:hover {
+    transform: translateZ(30px) scale(1.02);
+    box-shadow: 
+        0 15px 45px 0 rgba(31, 38, 135, 0.45),
+        inset 0 0 100px rgba(73, 191, 157, 0.2);
+}
+
+/* 添加新的3D效果样式 */
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+
+#header, #main > section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 0 80px rgba(73, 191, 157, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 悬停效果增强 */
+#main > section:hover {
+    transform: 
+        translateZ(50px) 
+        rotateX(2deg) 
+        rotateY(2deg) 
+        scale(1.02);
+    box-shadow: 
+        0 25px 45px 0 rgba(31, 38, 135, 0.45),
+        inset 0 0 120px rgba(73, 191, 157, 0.2);
+}
+
+/* 添加光晕效果 */
+#header::before, #main > section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.6) 45%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.6) 55%,
+        transparent 100%
+    );
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#header:hover::before, #main > section:hover::before {
+    opacity: 1;
+}
+
+/* 添加深度效果 */
+.depth-marker {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(-50px);
+    width: 80%;
+    height: 30px;
+    background: linear-gradient(
+        to bottom,
+        rgba(73, 191, 157, 0.2),
+        transparent
+    );
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/* 优化滚动指示器 */
+.scroll-indicator {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%) translateZ(100px);
+    z-index: 1000;
+}
+
+.scroll-indicator-dot {
+    width: 12px;
+    height: 12px;
+    margin: 15px 0;
+    background: rgba(73, 191, 157, 0.3);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(73, 191, 157, 0.3);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot:hover::before,
+.scroll-indicator-dot.active::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.scroll-indicator-dot.active {
+    background: #49bf9d;
+    transform: scale(1.2);
+}
+
+/* 更新白色主题样式 */
+body {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+
+#header, #main > section {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.1),
+        inset 0 0 80px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* 悬停效果 */
+#main > section:hover {
+    transform: 
+        translateZ(50px) 
+        rotateX(2deg) 
+        rotateY(2deg) 
+        scale(1.02);
+    box-shadow: 
+        0 25px 45px 0 rgba(31, 38, 135, 0.15),
+        inset 0 0 120px rgba(255, 255, 255, 0.8);
+}
+
+/* 光晕效果 */
+#header::before, #main > section::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        transparent 0%,
+        rgba(255, 255, 255, 0.6) 45%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0.6) 55%,
+        transparent 100%
+    );
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* 滚动指示器 */
+.scroll-indicator-dot {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.scroll-indicator-dot.active {
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* 优化移动端交互 */
+@media (hover: hover) and (pointer: fine) {
+    /* 桌面端悬停效果 */
+    #main > section:hover {
+        transform: 
+            translateZ(50px) 
+            rotateX(2deg) 
+            rotateY(2deg) 
+            scale(1.02);
+        box-shadow: 
+            0 25px 45px 0 rgba(31, 38, 135, 0.15),
+            inset 0 0 120px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* 移动端触摸效果 */
+@media (hover: none) and (pointer: coarse) {
+    #main > section {
+        transition: all 0.3s cubic-bezier(0.2, 0, 0.1, 1);
+        transform-origin: center center;
+        touch-action: manipulation; /* 优化触摸行为 */
+        -webkit-tap-highlight-color: transparent; /* 移除默认点击高亮 */
+    }
+
+    #main > section:active {
+        transform: translateZ(30px) scale(0.98);
+        box-shadow: 
+            0 15px 35px 0 rgba(31, 38, 135, 0.2),
+            inset 0 0 100px rgba(255, 255, 255, 0.6);
+    }
+
+    /* 优化滚动行为 */
+    .content-wrapper {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+
+    /* 减少移动端动画复杂度 */
+    .scroll-indicator {
+        transform: translateY(-50%) translateZ(50px);
+    }
+
+    /* 优化移动端光晕效果 */
+    #header::before, #main > section::before {
+        transition: opacity 0.3s ease;
+    }
+}
+
+/* 性能优化相关样式 */
+#main > section {
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    transform: translateZ(0);
+}
+
+/* 增强3D效果 */
+.content-wrapper {
+    transform-style: preserve-3d;
+    perspective: 2000px;
+}
+
+#header, #main > section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 
+        0 10px 40px rgba(255, 255, 255, 0.2),
+        inset 0 0 100px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 水晶反射效果 */
+#header::after, #main > section::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.1) 70%,
+        transparent 100%
+    );
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 1;
+    animation: crystalShine 10s linear infinite;
+}
+
+@keyframes crystalShine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    50%, 100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* 悬停效果增强 */
+#main > section:hover {
+    transform: 
+        translateZ(50px) 
+        rotateX(2deg) 
+        rotateY(2deg) 
+        scale(1.02);
+    box-shadow: 
+        0 20px 60px rgba(255, 255, 255, 0.3),
+        inset 0 0 120px rgba(255, 255, 255, 0.2);
+}
+
+/* 添加深度光晕 */
+.depth-glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: -1;
+    transform: translateZ(-50px);
+    filter: blur(20px);
+}

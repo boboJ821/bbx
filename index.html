@@ -483,10 +483,21 @@
 				}
 			}
 		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+		<script src="./assets/js/components/ThreeBackground.js"></script>
 	</head>
 	<body class="is-preload">
+		<div class="content-wrapper page-transition">
+			<!-- 滚动指示器 -->
+			<div class="scroll-indicator">
+				<div class="scroll-indicator-dot" data-section="header"></div>
+				<div class="scroll-indicator-dot" data-section="one"></div>
+				<div class="scroll-indicator-dot" data-section="two"></div>
+				<div class="scroll-indicator-dot" data-section="three"></div>
+				<div class="scroll-indicator-dot" data-section="four"></div>
+			</div>
 
-		<!-- Header -->
+			<!-- Header -->
 			<div class="avatar-overlay"></div>
 			<div class="avatar-lightbox"></div>
 			<header id="header" style="background-image: url('./images/overlay.png'), url('./images/bg.jpg');">
@@ -510,7 +521,7 @@
 				</div>
 			</header>
 
-		<!-- Main -->
+			<!-- Main -->
 			<div id="main">
 
 				<!-- One -->
@@ -518,7 +529,9 @@
 						<header class="major">
 							<h2>关于我</h2>
 						</header>
-						<p>我是一个热情开朗、富有创意的人，对新鲜事物充满好奇，擅长将美学和创新融入工作。我的思考方式融合了感性和理性，追求卓越和效率。</p>
+						<p>具备创意与执行力，擅长以数据驱动创新，将美学与技术高效融入项目。</p>
+						<p>深耕AI技术与算法模型应用，解决业务难题，推动自动化与平台运营优化。</p>
+						<p>善于快速理解需求并搭建高效解决方案，具备出色的学习与适应能力，为技术创新与业务增长持续赋能。</p>
 						<div class="row">
 							<div class="col-6 col-12-small">
 								<h3>核心优势</h3>
@@ -582,60 +595,123 @@
 					</section>
 
 				<!-- Two -->
-					<section id="two">
-						<h2>工作经历</h2>
-						<div class="timeline">
-							<article class="project-card">
-								<h3>福州卫易网络科技有限公司</h3>
-								<p class="info">运营部主管 | 2023.11 - 2024.08</p>
-								<div class="project-highlight" style="background: #f8f8f8; padding: 10px; margin: 10px 0; border-radius: 5px;">
-									<h4>🏆 主要成就</h4>
+				<section id="two">
+					<h2>工作经历</h2>
+					<div class="timeline">
+						<article class="project-card">
+							<h3>福州致合电子商务有限公司</h3>
+							<p class="info">美团便利超市（福州区域）运营优化</p>
+							<p class="info">平台运营 | 2024.03 - 2025.01</p>
+							<div class="project-highlight" style="background: #f8f8f8; padding: 10px; margin: 10px 0; border-radius: 5px;">
+								<h4>🏆 项目成果</h4>
+								<ul>
+									<li>负责12家门店的运营优化与业绩提升</li>
+									<li>单店月均营业额达17万—20万</li>
+									<li>核心商品曝光量提升15%，访购率提升8%</li>
+								</ul>
+							</div>
+							<p><strong>主要职责：</strong></p>
+							<ul>
+								<li><strong>竞品分析与数据采集优化：</strong>
 									<ul>
-										<li>带领团队实现单月100万流水</li>
-										<li>优化流程提升效率50%</li>
-										<li>销售额提升20%</li>
+										<li>基于AI文本相似度算法（Python+NLP）搭建本地竞品匹配模型，实现商品自动对齐，匹配准确率达85%</li>
+										<li>设计影刀RPA程序，减少数据采集时间50%</li>
 									</ul>
-								</div>
-								<p><strong>负责项目：</strong>小程序抽卡平台</p>
-								<p><strong>工作职责：</strong></p>
-								<ul>
-									<li>市场调研与产品选择：通过市场数据分析和用户反馈调研，精准挑选高潜力爆款产品</li>
-									<li>流程优化：使用Python编写自动化脚本，优化产品上架流程</li>
-									<li>数据分析：利用Excel进行产品结构特性分析</li>
-									<li>团队管理：带领4人团队，制定目标与任务分配</li>
-								</ul>
-							</article>
-
-							<article class="project-card">
-								<h3>盟盟链（福建）物联网技术有限公司</h3>
-								<p class="info">平台负责人 | 2023.01 - 2023.10</p>
-								<div class="project-highlight" style="background: #f8f8f8; padding: 10px; margin: 10px 0; border-radius: 5px;">
-									<h4>🎯 核心业绩</h4>
+								</li>
+								<li><strong>精细化数据运营：</strong>
 									<ul>
-										<li>从0到1搭建商城系统</li>
-										<li>累计销售额110万元</li>
+										<li>分析库存周转、订单时效等核心指标，提升异常问题响应速度</li>
+										<li>优化用户购买关联分析和商品关键词，提升客单价</li>
 									</ul>
-								</div>
-								<p><strong>主要职责：</strong></p>
-								<ul>
-									<li>产品管理：商品上架、关键字优化、SKU设置</li>
-									<li>商城搭建：负责首页设计、风格定位和功能布局优化</li>
-									<li>活动策划：执行营销活动，提升销售转化</li>
-									<li>数据分析：定期分析销售数据，优化运营策略</li>
-								</ul>
-							</article>
+								</li>
+								<li><strong>门店视觉运营体系搭建：</strong>
+									<ul>
+										<li>建立营销素材模板库，优化商品主图与展示效果，提升点击率</li>
+									</ul>
+								</li>
+								<li><strong>商品价格策略优化：</strong>
+									<ul>
+										<li>构建"高频商品实时比价+长尾商品动态定价"机制，核心商品曝光量提升15%，访购率提升8%</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
 
-							<article class="project-card">
-								<h3>世品力（厦门）国际贸易有限公司</h3>
-								<p class="info">服装设计师 | 2022.03 - 2022.12</p>
-								<p><strong>工作内容：</strong></p>
+						<article class="project-card">
+							<h3>福州卫易网络科技有限公司</h3>
+							<p class="info">小程序抽卡平台运营</p>
+							<p class="info">运营主管 | 2023.01 - 2024.02</p>
+							<div class="project-highlight" style="background: #f8f8f8; padding: 10px; margin: 10px 0; border-radius: 5px;">
+								<h4>🏆 项目成果</h4>
 								<ul>
-									<li>图案设计：创意设计符合品牌形象的服装图案</li>
-									<li>版型设计：创新设计独特的服装版型</li>
-									<li>市场调研：分析趋势并将其融入设计</li>
-									<li>供应链管理：确保材料质量和成本优化</li>
+									<li>上线3个月实现单月流水破百万</li>
 								</ul>
-							</article>
+							</div>
+							<p><strong>主要职责：</strong></p>
+							<ul>
+								<li><strong>数据驱动的选品策略设计：</strong>
+									<ul>
+										<li>建立"市场占有率+社交传播度+IP热度"三维选品模型，精准引进Pokemon、卡游、数码宝贝等3款爆款卡池，首月流水增长20%</li>
+										<li>设计A/B测试机制验证卡池吸引力</li>
+									</ul>
+								</li>
+								<li><strong>自动化运营系统开发：</strong>
+									<ul>
+										<li>基于Python搭建自动化上架系统，实现卡池配置/素材上传/价格校准一键化操作</li>
+										<li>优化商品上架从纯人工到自动化，耗时从8小时缩短至2小时，配置错误率降低90%</li>
+									</ul>
+								</li>
+								<li><strong>精细化运营分析体系：</strong>
+									<ul>
+										<li>根据三维选品模型，建立自有卡池</li>
+										<li>通过蒙特卡洛模拟测试50+种爆率组合，确定最优概率分布</li>
+									</ul>
+								</li>
+								<li><strong>优化用户体验：</strong>
+									<ul>
+										<li>与美术团队分析动效，提升用户体验感、优化卡池UI细节</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
+
+						<article class="project-card">
+							<h3>盟盟搭（福建）物联网技术集团有限公司</h3>
+							<p class="info">微信小程序自营商城体系搭建与运营</p>
+							<p class="info">平台负责人 | 2022.03 - 2022.12</p>
+							<div class="project-highlight" style="background: #f8f8f8; padding: 10px; margin: 10px 0; border-radius: 5px;">
+								<h4>🏆 项目成果</h4>
+								<ul>
+									<li>上线6个月累计GMV 210万元，用户复购率37%</li>
+								</ul>
+							</div>
+							<p><strong>主要职责：</strong></p>
+							<ul>
+								<li><strong>商品管理体系优化：</strong>
+									<ul>
+										<li>标准化商品运营，建立「商品标题-关键词-属性标签」三级优化体系</li>
+										<li>设计SKU动态组合策略（基础款/套餐款/礼品款），提升连带率</li>
+									</ul>
+								</li>
+								<li><strong>商城架构设计与体验优化：</strong>
+									<ul>
+										<li>从0到1系统搭建，主导「极简轻奢」风格定位，制定《视觉规范手册》（含配色方案/字体系统/图标库）</li>
+										<li>开发「智能推荐+人工精选」双轨商品陈列模块</li>
+										<li>搭建会员成长体系</li>
+									</ul>
+								</li>
+								<li><strong>数据驱动的营销活动策划：</strong>
+									<ul>
+										<li>爆款打造计划，策划「超级单品日」活动</li>
+									</ul>
+								</li>
+								<li><strong>精细化数据运营：</strong>
+									<ul>
+										<li>智能决策系统，搭建Power BI数据看板，实时监控18项核心指标</li>
+									</ul>
+								</li>
+							</ul>
+						</article>
 						</div>
 					</section>
 
@@ -667,6 +743,22 @@
 											 class="skill-icon" />
 									</div>
 									<h3>ChatGPT</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="90"></div>
+									</div>
+									<span class="skill-percentage">90%</span>
+								</div>
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/deepseek.webp" 
+											 alt="Deepseek" 
+											 class="skill-icon" />
+									</div>
+									<h3>Deepseek</h3>
 								</div>
 								<div class="skill-bar-container">
 									<div class="skill-bar">
@@ -715,6 +807,22 @@
 											 class="skill-icon" />
 									</div>
 									<h3>cursor</h3>
+								</div>
+								<div class="skill-bar-container">
+									<div class="skill-bar">
+										<div class="skill-bar-fill" data-percentage="80"></div>
+									</div>
+									<span class="skill-percentage">80%</span>
+								</div>
+							</div>
+							<div class="skill-card">
+								<div class="skill-header">
+									<div class="relative w-12 h-12">
+										<img src="./images/stablediffusion.webp" 
+											 alt="Stablediffusion" 
+											 class="skill-icon" />
+									</div>
+									<h3>Stablediffusion</h3>
 								</div>
 								<div class="skill-bar-container">
 									<div class="skill-bar">
