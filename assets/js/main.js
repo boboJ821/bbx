@@ -1,9 +1,3 @@
-/*
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var $window = $(window),
@@ -109,7 +103,14 @@
 					usePopupDefaultStyling: false,
 					usePopupEasyClose: false,
 					usePopupNav: true,
-					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50),
+					usePopupForceClose: false,
+					usePopupLoader: true,
+					popupTransitionIn: 'fade',
+					popupTransitionOut: 'fade',
+					popupSpeed: 300,
+					fadeSpeed: 300,
+					popupIsFixed: true
 				});
 
 			});
@@ -121,4 +122,50 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 初始化3D背景
     new ThreeBackground();
+
+    // 滚动显示动画
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // 为所有需要动画的元素添加观察
+    document.querySelectorAll('.project-card, .skill-bar, .timeline article').forEach(el => {
+        el.classList.add('scroll-reveal');
+        observer.observe(el);
+    });
+
+    // 滚动指示器
+    const sections = ['header', 'one', 'two', 'three', 'four'];
+    const dots = document.querySelectorAll('.scroll-indicator-dot');
+
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
+        sections.forEach((section, index) => {
+            const el = document.getElementById(section);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                    currentSection = section;
+                    dots[index].classList.add('active');
+                } else {
+                    dots[index].classList.remove('active');
+                }
+            }
+        });
+    });
+
+    // 点击滚动指示器
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            document.getElementById(sections[index]).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });

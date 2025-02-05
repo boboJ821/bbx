@@ -1,19 +1,14 @@
 <!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>黄曦的个人简历 | 产品运营 · 数据分析</title>
+		<title>黄曦的个人简历</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="./assets/css/main.css" />
 		<link rel="stylesheet" href="./assets/css/components/avatar.css" />
 		<link rel="stylesheet" href="./assets/css/components/skills.css" />
 		<link rel="stylesheet" href="./assets/css/components/nav.css" />
-		<meta name="description" content="黄曦的个人简历 - 产品运营与数据分析专家，3年运营经验，擅长数据驱动决策" />
+		<meta name="description" content="黄曦的个人简历" />
 		<style>
 			.skill-bar {
 				width: 100%;
@@ -498,28 +493,48 @@
 			</div>
 
 			<!-- Header -->
-			<div class="avatar-overlay"></div>
-			<div class="avatar-lightbox"></div>
-			<header id="header" style="background-image: url('./images/overlay.png'), url('./images/bg.jpg');">
+			<header id="header">
+				<!-- 优化装饰元素 -->
+				<div class="web3-particles">
+					<div class="particle"></div>
+					<div class="particle"></div>
+					<div class="particle"></div>
+				</div>
+				
 				<div class="inner">
+					<!-- 优化头像容器 -->
 					<div class="avatar-container">
-						<img src="./images/avatar-small.webp" alt="个人头像" class="avatar-small" />
+						<div class="avatar-glow"></div>
+						<img src="./images/avatar-small.webp" 
+							 alt="个人头像" 
+							 class="avatar-small"
+							 width="150"
+							 height="150"
+							 loading="eager"
+							 decoding="async" />
 					</div>
+					<!-- 优化标题文字 -->
 					<h1>
-						<span style="color: #49bf9d">产品运营 | 数据分析</span><br />
-						<small>3年运营经验 · 擅长数据驱动决策</small>
+						<span class="main-title">不断学习，持续进步</span>
+						<small class="sub-title">Continuous learning and continuous progress</small>
 					</h1>
-					<!-- 添加导航菜单 -->
+					<!-- 优化导航菜单 -->
 					<nav class="header-nav">
 						<ul>
-							<li><a href="#one" class="smooth-scroll">关于我</a></li>
-							<li><a href="#two" class="smooth-scroll">工作经历</a></li>
-							<li><a href="#three" class="smooth-scroll">专业技能</a></li>
-							<li><a href="#four" class="smooth-scroll">联系我</a></li>
+							<li><a href="#one" class="smooth-scroll nav-link">关于我</a></li>
+							<li><a href="#two" class="smooth-scroll nav-link">工作经历</a></li>
+							<li><a href="#three" class="smooth-scroll nav-link">专业技能</a></li>
+							<li><a href="#four" class="smooth-scroll nav-link">联系我</a></li>
 						</ul>
 					</nav>
 				</div>
 			</header>
+
+			<!-- Lightbox 组件 -->
+			<div class="avatar-overlay"></div>
+			<div class="avatar-lightbox">
+				<img src="./images/avatar-large.webp" alt="个人头像" />
+			</div>
 
 			<!-- Main -->
 			<div id="main">

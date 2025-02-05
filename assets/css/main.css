@@ -4071,3 +4071,1376 @@ body {
     transform: translateZ(-50px);
     filter: blur(20px);
 }
+
+/* 移动端优化样式 */
+@media screen and (max-width: 736px) {
+    /* 调整主体内容宽度和边距 */
+    #main {
+        padding: 2em 1em;  /* 减小左右内边距 */
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #main > section {
+        padding: 1.5em;  /* 减小section内边距 */
+        margin: 1em 0;
+    }
+
+    /* 调整文字大小 */
+    h1 {
+        font-size: 1.6em;
+        line-height: 1.4;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    /* 优化卡片布局 */
+    .project-card {
+        padding: 1.2em;
+        margin: 1em 0;
+    }
+
+    /* 调整网格布局 */
+    .row {
+        margin: 0 -0.5em;  /* 减小行间距 */
+    }
+
+    .row > * {
+        padding: 0 0.5em;  /* 减小列间距 */
+    }
+
+    /* 优化技能卡片布局 */
+    .skills-grid {
+        grid-template-columns: 1fr;  /* 单列显示 */
+        gap: 1em;
+    }
+
+    .skill-card {
+        padding: 1.2em;
+    }
+
+    /* 优化时间线布局 */
+    .timeline {
+        margin-left: 0;
+        padding-left: 15px;
+    }
+
+    .timeline article:before {
+        left: -21px;
+    }
+
+    /* 优化核心优势和个人标签布局 */
+    .core-advantages,
+    .personal-tags {
+        grid-template-columns: repeat(2, 1fr);  /* 两列显示 */
+        gap: 0.8em;
+    }
+
+    .advantage-item,
+    .tag-item {
+        padding: 0.8em;
+    }
+
+    /* 调整联系信息布局 */
+    .labeled-icons li {
+        margin-bottom: 1em;
+    }
+
+    /* 优化头部导航 */
+    .header-nav {
+        margin: 1.5em 0.5em 0;
+        padding: 0.5em;
+    }
+
+    .header-nav ul {
+        gap: 0.6em;
+    }
+
+    .header-nav a {
+        padding: 0.4em 0.8em;
+        font-size: 0.9em;
+    }
+}
+
+/* 超小屏幕优化 */
+@media screen and (max-width: 480px) {
+    #main {
+        padding: 1.5em 0.8em;
+    }
+
+    .core-advantages,
+    .personal-tags {
+        grid-template-columns: 1fr;  /* 单列显示 */
+    }
+
+    .project-card {
+        padding: 1em;
+    }
+
+    /* 调整列布局 */
+    .col-6-small {
+        width: 100% !important;  /* 强制单列显示 */
+        margin-bottom: 1em;
+    }
+}
+
+/* 头部区域优化 */
+#header {
+    position: relative;
+    background-blend-mode: overlay;
+    overflow: hidden;
+}
+
+#header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(73, 191, 157, 0.8) 0%,
+        rgba(73, 191, 157, 0.4) 100%
+    );
+    z-index: 1;
+}
+
+#header .inner {
+    position: relative;
+    z-index: 2;
+    padding: 3em 1.5em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* 头像容器样式优化 */
+.avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2em;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd);
+    animation: pulseGlow 2s infinite;
+}
+
+.avatar-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    transition: transform 0.3s ease;
+}
+
+.avatar-container:hover .avatar-small {
+    transform: scale(1.05);
+}
+
+/* 标题样式优化 */
+#header h1 {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+#header h1 span {
+    display: block;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0.3em;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s infinite;
+}
+
+#header h1 small {
+    display: block;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards 0.5s;
+}
+
+/* 动画定义 */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(73, 191, 157, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(73, 191, 157, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(73, 191, 157, 0.5);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    #header .inner {
+        padding: 2em 1em;
+    }
+
+    .avatar-container {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1.5em;
+    }
+
+    #header h1 span {
+        font-size: 1.6em;
+    }
+
+    #header h1 small {
+        font-size: 0.9em;
+    }
+}
+
+/* Lightbox 优化 */
+.avatar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.avatar-lightbox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.avatar-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-overlay.active,
+.avatar-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.avatar-lightbox.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Web3风格头部优化 */
+#header {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0b1e 0%, #2b2d42 100%);
+    overflow: hidden;
+}
+
+/* 动态背景网格 */
+#header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, rgba(73, 191, 157, 0.1) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(73, 191, 157, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: gridMove 20s linear infinite;
+}
+
+/* 光晕效果 */
+#header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(73, 191, 157, 0.2) 0%,
+        rgba(73, 191, 157, 0.1) 30%,
+        transparent 70%);
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+#header .inner {
+    position: relative;
+    z-index: 2;
+    padding: 4em 2em;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(73, 191, 157, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(73, 191, 157, 0.15),
+        inset 0 0 32px rgba(73, 191, 157, 0.05);
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Web3风格头像容器 */
+.avatar-container {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 3em;
+    border-radius: 50%;
+    padding: 8px;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd);
+    animation: rotateGradient 4s linear infinite;
+}
+
+.avatar-container:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd, #49bf9d);
+    border-radius: 50%;
+    z-index: -1;
+    animation: borderRotate 4s linear infinite;
+}
+
+.avatar-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(73, 191, 157, 0.3);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar-container:hover .avatar-small {
+    transform: scale(1.05);
+    border-color: rgba(73, 191, 157, 0.5);
+}
+
+/* Web3风格标题 */
+#header h1 {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#header h1 span {
+    display: block;
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd, #49bf9d);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 3s linear infinite;
+    text-shadow: 0 0 20px rgba(73, 191, 157, 0.3);
+}
+
+#header h1 small {
+    display: block;
+    font-size: 1.1em;
+    color: rgba(73, 191, 157, 0.8);
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 1em;
+    text-transform: uppercase;
+    animation: glowText 2s ease-in-out infinite;
+}
+
+/* Web3动画效果 */
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(30px);
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes borderRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes glowText {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(73, 191, 157, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(73, 191, 157, 0.6);
+    }
+}
+
+/* Web3风格Lightbox */
+.avatar-overlay {
+    background: rgba(10, 11, 30, 0.95);
+    backdrop-filter: blur(20px);
+}
+
+.avatar-lightbox {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.avatar-lightbox img {
+    border: 2px solid rgba(73, 191, 157, 0.3);
+    box-shadow: 
+        0 0 30px rgba(73, 191, 157, 0.3),
+        inset 0 0 20px rgba(73, 191, 157, 0.2);
+}
+
+.avatar-lightbox.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    #header .inner {
+        padding: 2.5em 1.5em;
+    }
+
+    .avatar-container {
+        width: 140px;
+        height: 140px;
+    }
+
+    #header h1 span {
+        font-size: 1.8em;
+    }
+
+    #header h1 small {
+        font-size: 0.9em;
+    }
+}
+
+/* 优化header整体样式 */
+#header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* 优化头像容器 */
+.avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2em;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(45deg, #49bf9d, #4ca2cd);
+    box-shadow: 0 0 20px rgba(73, 191, 157, 0.3);
+}
+
+.avatar-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* 优化标题文字 */
+.main-title {
+    display: block;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.3em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-title {
+    display: block;
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* 优化导航菜单 */
+.header-nav {
+    margin-top: 2.5em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 0.7em 1.4em;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: rgba(73, 191, 157, 0.1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.nav-link:hover {
+    background: rgba(73, 191, 157, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(73, 191, 157, 0.2);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    .avatar-container {
+        width: 120px;
+        height: 120px;
+    }
+
+    .main-title {
+        font-size: 1.8em;
+    }
+
+    .sub-title {
+        font-size: 0.9em;
+    }
+
+    .nav-link {
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+}
+
+/* 修改卡片浮动样式 */
+#main .project-card,
+#two .work-item {
+    border: 1px solid #efefef;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(0);
+    will-change: transform;
+}
+
+#main .project-card:hover,
+#two .work-item:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 20px rgba(73, 191, 157, 0.15);
+    border-color: rgba(73, 191, 157, 0.3);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    #main .project-card,
+    #two .work-item {
+        padding: 12px;
+        margin: 8px 0;
+    }
+    
+    #main .project-card:hover,
+    #two .work-item:hover {
+        transform: translateY(-4px) !important;
+    }
+}
+
+/* 添加页面过渡动画 */
+.content-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 滚动指示器动画 */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.scroll-indicator-dot {
+    width: 10px;
+    height: 10px;
+    margin: 15px 0;
+    background: rgba(73, 191, 157, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+    background: #49bf9d;
+    box-shadow: 0 0 10px rgba(73, 191, 157, 0.5);
+    transform: scale(1.3);
+}
+
+/* 卡片悬浮动画增强 */
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(73, 191, 157, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover::before {
+    transform: translateX(100%);
+}
+
+/* 技能条动画优化 */
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    position: relative;
+    transform: translateX(-100%);
+    animation: slideIn 1s ease-out forwards;
+}
+
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* 导航链接动画增强 */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #49bf9d;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::before {
+    width: 80%;
+}
+
+/* 头像容器动画增强 */
+.avatar-container {
+    position: relative;
+}
+
+.avatar-glow {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(73, 191, 157, 0.2), transparent 70%);
+    animation: rotateGlow 8s linear infinite;
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 滚动动画效果 */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 联系方式图标动画 */
+.labeled-icons li {
+    transition: transform 0.3s ease;
+}
+
+.labeled-icons li:hover {
+    transform: translateX(10px);
+}
+
+.labeled-icons .icon {
+    position: relative;
+}
+
+.labeled-icons .icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(73, 191, 157, 0.2);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.labeled-icons li:hover .icon::after {
+    transform: scale(1.5);
+}
+
+/* 优化卡片动画效果 */
+.project-card {
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(73, 191, 157, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.05),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片悬浮效果 */
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 
+        0 20px 40px rgba(73, 191, 157, 0.15),
+        0 12px 16px rgba(0, 0, 0, 0.05);
+    border-color: rgba(73, 191, 157, 0.3);
+}
+
+/* 添加光效扫过动画 */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(73, 191, 157, 0.05),
+        transparent
+    );
+    transition: 0.8s;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+/* 添加边框发光效果 */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(73, 191, 157, 0.3),
+        transparent
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* 优化卡片内容动画 */
+.project-card h3,
+.project-card p {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    transform: translateY(-2px);
+    color: #49bf9d;
+}
+
+.project-card:hover p {
+    transform: translateY(2px);
+}
+
+/* 添加交互反馈 */
+.project-card:active {
+    transform: translateY(-8px);
+    transition: transform 0.1s;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    .project-card {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+            0 12px 24px rgba(73, 191, 157, 0.12),
+            0 8px 12px rgba(0, 0, 0, 0.04);
+    }
+    
+    .project-card:active {
+        transform: translateY(-4px);
+    }
+}
+
+/* 添加进场动画 */
+.project-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardAppear 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 为不同卡片添加延迟动画 */
+.project-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.project-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.project-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* 修正卡片容器样式 */
+#two .work-item {
+    transform-style: preserve-3d;
+    perspective: none !important;
+    transform: none !important;
+}
+
+.work-item a.image {
+    transform: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 确保卡片只有垂直上浮效果 */
+.project-card,
+.work-item {
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.project-card:hover,
+.work-item:hover {
+    transform: translateY(-12px) !important;
+}
+
+/* 移除任何可能的倾斜变换 */
+.project-card,
+.work-item,
+.work-item a.image,
+.project-card > *,
+.work-item > * {
+    transform-style: flat !important;
+    perspective: none !important;
+    backface-visibility: hidden;
+}
+
+/* 修正整体容器的倾斜问题 */
+#two {
+    transform: none !important;
+    perspective: none !important;
+}
+
+.poptrox-popup {
+    transform: none !important;
+    perspective: none !important;
+}
+
+/* 修正工作展示区域样式 */
+.work-item {
+    transform: none !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 确保图片容器不倾斜 */
+.image.fit {
+    transform: none !important;
+    transition: all 0.3s ease;
+}
+
+/* 修正弹出层样式 */
+#poptrox-container {
+    transform: none !important;
+    perspective: none !important;
+}
+
+/* 确保所有相关元素都不会倾斜 */
+#two *,
+.poptrox-popup *,
+.work-item *,
+.image.fit * {
+    transform-style: flat !important;
+    perspective: none !important;
+    backface-visibility: hidden;
+}
+
+/* 保持垂直上浮动画 */
+.work-item:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: 
+        0 20px 40px rgba(73, 191, 157, 0.15),
+        0 12px 16px rgba(0, 0, 0, 0.05);
+}
+
+/* 移除所有容器的倾斜效果 */
+#main,
+#header,
+#two,
+#one,
+#three,
+#four,
+.inner,
+.container,
+.row,
+.col-4,
+.col-8,
+.col-6,
+.col-12,
+section,
+article,
+.image,
+.work-item,
+.project-card,
+.timeline,
+.skill-bar,
+.labeled-icons,
+.poptrox-popup,
+#poptrox-container,
+.content-wrapper {
+    transform: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    backface-visibility: hidden;
+}
+
+/* 确保子元素也不会倾斜 */
+#main *,
+#header *,
+#two *,
+#one *,
+#three *,
+#four *,
+.inner *,
+.container *,
+.row *,
+section *,
+article *,
+.image *,
+.work-item *,
+.project-card *,
+.timeline *,
+.skill-bar *,
+.labeled-icons *,
+.poptrox-popup *,
+#poptrox-container * {
+    transform-style: flat !important;
+    perspective: none !important;
+    backface-visibility: hidden;
+}
+
+/* 保持只有垂直方向的动画效果 */
+.project-card:hover,
+.work-item:hover,
+.timeline article:hover,
+.skill-bar:hover {
+    transform: translateY(-12px) !important;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 736px) {
+    .project-card:hover,
+    .work-item:hover,
+    .timeline article:hover,
+    .skill-bar:hover {
+        transform: translateY(-8px) !important;
+    }
+}
+
+/* 移动端布局优化 */
+@media screen and (max-width: 736px) {
+    /* 调整内容宽度 */
+    #main {
+        padding: 2em 1.5em !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .container {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* 优化内容边距 */
+    section {
+        padding: 2em 0 !important;
+        margin: 0 !important;
+    }
+
+    /* 调整栅格系统 */
+    .row {
+        margin: 0 -10px;
+        width: calc(100% + 20px);
+    }
+
+    .row > * {
+        padding: 0 10px !important;
+    }
+
+    /* 优化卡片布局 */
+    .project-card,
+    .work-item {
+        margin: 10px 0;
+        padding: 15px;
+        width: 100% !important;
+    }
+
+    /* 调整图片容器 */
+    .image.fit {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+    }
+
+    /* 优化技能展示区域 */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 0;
+    }
+
+    /* 调整文字大小和间距 */
+    h2 {
+        font-size: 1.5em !important;
+        margin-bottom: 1em !important;
+    }
+
+    p {
+        font-size: 0.95em;
+        line-height: 1.6;
+        margin-bottom: 1.2em;
+    }
+
+    /* 优化联系方式布局 */
+    .labeled-icons li {
+        margin-bottom: 1em;
+    }
+
+    /* 调整时间线布局 */
+    .timeline {
+        padding-left: 15px;
+        margin-left: 5px;
+    }
+
+    .timeline article {
+        padding-left: 15px;
+    }
+
+    /* 优化页面边距 */
+    .inner {
+        padding: 2em 1.5em !important;
+    }
+
+    /* 调整头部布局 */
+    #header {
+        padding: 4em 1.5em !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* 优化导航菜单 */
+    .header-nav {
+        margin: 2em -0.5em 0;
+        padding: 0.8em;
+    }
+
+    .header-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+    }
+
+    .nav-link {
+        padding: 0.6em 1em;
+        font-size: 0.9em;
+    }
+
+    /* 调整滚动指示器位置 */
+    .scroll-indicator {
+        right: 10px;
+    }
+
+    /* 优化弹出层 */
+    .poptrox-popup {
+        padding: 1em !important;
+        margin: 0 !important;
+    }
+}
+
+/* 平板设备优化 */
+@media screen and (min-width: 737px) and (max-width: 980px) {
+    #main {
+        padding: 3em 2em;
+    }
+
+    .container {
+        width: 90%;
+        max-width: none;
+    }
+
+    .row {
+        margin: 0 -15px;
+        width: calc(100% + 30px);
+    }
+
+    .row > * {
+        padding: 0 15px;
+    }
+}
+
+/* 移动端工作经历卡片优化 */
+@media screen and (max-width: 736px) {
+    /* 扩展工作经历容器宽度 */
+    #two .container {
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        padding: 0 15px !important;
+    }
+
+    /* 调整工作经历卡片样式 */
+    #two .work-item {
+        width: 100% !important;
+        margin: 15px 0;
+        padding: 20px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* 优化图片容器 */
+    #two .work-item .image.fit {
+        margin: -20px -20px 20px -20px;
+        width: calc(100% + 40px);
+        border-radius: 12px 12px 0 0;
+        overflow: hidden;
+    }
+
+    /* 调整文字内容边距 */
+    #two .work-item h3 {
+        margin: 0 0 15px 0;
+        padding: 0 5px;
+    }
+
+    #two .work-item p {
+        padding: 0 5px;
+        margin-bottom: 10px;
+    }
+
+    /* 优化栅格布局 */
+    #two .row {
+        margin: 0;
+        width: 100%;
+    }
+
+    #two .row > * {
+        padding: 0 !important;
+    }
+
+    /* 确保内容不会溢出 */
+    #two {
+        overflow-x: hidden;
+    }
+}
+
+/* 平板设备工作经历优化 */
+@media screen and (min-width: 737px) and (max-width: 980px) {
+    #two .container {
+        width: 95%;
+        max-width: none;
+    }
+
+    #two .work-item {
+        margin: 15px 0;
+    }
+}
